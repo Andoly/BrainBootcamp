@@ -1,14 +1,19 @@
+import { HeadingH2 } from "./Heading";
 import Button from "./Button";
 
-const Sidebar = () => {
+const Sidebar = ({ games }) => {
   return (
     <aside>
-      <h2>Sidebar</h2>
-      <Button color>Primary</Button>
-      <Button kind="secondary">Secondary</Button>
-      <Button color>Primary</Button>
-      <Button kind="secondary">Secondary</Button>
-      <Button color>Primary</Button>
+      <HeadingH2>Games</HeadingH2>
+      <ul>
+        {games.map((game) => (
+          <li key={game.id}>
+            <a href="true">
+              <Button kind="secondary">{game.title.substring(0, 14)}</Button>
+            </a>
+          </li>
+        ))}
+      </ul>
     </aside>
   );
 };

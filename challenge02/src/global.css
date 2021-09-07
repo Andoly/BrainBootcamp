@@ -91,3 +91,7 @@ Button {
   background: var(--secondary);
   border: 1px solid var(--secondary);
 }
+
+.container {
+  display: flex;
+}
