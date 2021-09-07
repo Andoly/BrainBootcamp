@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px "Roboto", sans-serif;
+  background: #f2f2f2;
+  color: var(--black);
+  -webkit-font-smoothing: antialiased !important;
+  min-height: 100vh;
+  margin: 0 35px;
+}
+
+ul {
+  list-style: none;
+}
+:root {
+  --primary: #f231a5;
+  --secondary: #06092b;
+  --black: #121212;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+.logo {
+  border-radius: 10px;
+  width: 6%;
+  margin-left: 65px;
+}
+.titleHeader {
+  padding: 50px;
+}
+nav {
+  padding: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+main {
+  display: flex;
+}
+aside {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+article {
+  width: 80%;
+}
+footer {
+  margin-top: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+}
+.footer > a {
+  margin: 10px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+Button {
+  height: 40px;
+  width: 142px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.primary {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.secondary {
+  background: var(--secondary);
+  border: 1px solid var(--secondary);
+}
