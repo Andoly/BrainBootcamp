@@ -3,17 +3,18 @@ import Menu from "./components/Menu";
 import Sidebar from "./components/Sidebar";
 import Content from "./components/Content";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 const games = [
   {
     id: "6136cea8c018338be51fae6a",
     title: "The Witcher 3 : Wild Hunt - Game of the Year Edition",
     content: [
-      "Play the most polished and complete version of the most awarded game of 2015 - The Witcher 3: Wild Hunt – Game of the Year Edition. Now available with all expansions and additional content.",
-      "Gruesomely destroy foes as a professional monster hunter armed with a range of upgradeable weapons, mutating potions, and combat magic.",
-      "Hunt down a wide variety of exotic monsters, from savage beasts prowling mountain passes to cunning supernatural predators lurking in the shadowy back alleys of densely populated cities.",
-      "Invest your rewards to upgrade your weaponry and buy custom armor, or spend them on horse races, card games, fist fighting and other pleasures life brings.",
-      "Traverse a fantastical open world: explore forgotten ruins, caves and shipwrecks, trade with merchants and dwarven smiths in cities, and hunt across open plains, amidst mountains and at sea.",
+      "Play the most polished and complete version of the most awarded game of 2015 - The Witcher 3: Wild Hunt – Game of the Year Edition. Now available with all expansions and additional content. ",
+      "Gruesomely destroy foes as a professional monster hunter armed with a range of upgradeable weapons, mutating potions, and combat magic. ",
+      "Hunt down a wide variety of exotic monsters, from savage beasts prowling mountain passes to cunning supernatural predators lurking in the shadowy back alleys of densely populated cities. ",
+      "Invest your rewards to upgrade your weaponry and buy custom armor, or spend them on horse races, card games, fist fighting and other pleasures life brings. ",
+      "Traverse a fantastical open world: explore forgotten ruins, caves and shipwrecks, trade with merchants and dwarven smiths in cities, and hunt across open plains, amidst mountains and at sea. ",
       "Make choices that go beyond good and evil and face their far-reaching consequences.",
     ],
   },
@@ -37,6 +38,8 @@ const games = [
 ];
 
 export default function App() {
+  const [title, setTitle] = useState(games[0].title);
+  const [content, setContent] = useState(games[0].content);
   return (
     <>
       <div className="container">
@@ -44,7 +47,7 @@ export default function App() {
         <Menu />
         <main>
           <Sidebar games={games} />
-          <Content />
+          <Content title={title} content={content} />
         </main>
         <Footer />
       </div>

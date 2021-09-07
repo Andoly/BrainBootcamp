@@ -53,6 +53,9 @@ aside {
 article {
   width: 80%;
 }
+section {
+  padding: 0 20px;
+}
 footer {
   margin-top: auto;
   padding: 20px;
@@ -90,8 +93,4 @@ Button {
 .secondary {
   background: var(--secondary);
   border: 1px solid var(--secondary);
-}
-
-.container {
-  display: flex;
 }
