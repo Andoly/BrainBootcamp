@@ -1,7 +1,11 @@
+import { HeadingH3 } from "./Heading";
+
 const Menu = () => {
   return (
     <nav>
-      <h2>Menu</h2>
+      <HeadingH3>Home</HeadingH3>
+      <HeadingH3>Service</HeadingH3>
+      <HeadingH3>About me</HeadingH3>
     </nav>
   );
 };
