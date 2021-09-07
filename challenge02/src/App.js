@@ -40,13 +40,20 @@ const games = [
 export default function App() {
   const [title, setTitle] = useState(games[0].title);
   const [content, setContent] = useState(games[0].content);
+
+  function handleClickGame(id) {
+    const game = games.find((item) => item.id === id);
+    setTitle(game.title);
+    setContent(game.content);
+  }
+
   return (
     <>
       <div className="container">
         <Header />
         <Menu />
         <main>
-          <Sidebar games={games} />
+          <Sidebar games={games} changeGame={handleClickGame} />
           <Content title={title} content={content} />
         </main>
         <Footer />
