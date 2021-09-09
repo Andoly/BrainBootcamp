@@ -1,3 +1,11 @@
+import React from "react";
+import CarForm from "./components/CarForm";
+import Container from "./components/Container";
+
 export default function App() {
-  return <div>Starting challeng 3</div>;
+  return (
+    <Container>
+      <CarForm />
+    </Container>
+  );
 }
