@@ -48,3 +48,14 @@ ul {
   max-width: 900px;
   margin: 30px auto;
 }
+
+table {
+  margin: 20px;
+}
+
+td,
+th {
+  text-align: center;
+  padding: 10px;
+  width: 200px;
+}
