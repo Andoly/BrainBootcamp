@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import CarForm from "./components/CarForm";
 import CarTable from "./components/CarTable";
 import Container from "./components/Container";
-import { getCars } from "./service/apiCars";
+import { getCars, delCars } from "./service/apiCars";
 
 const url = "http://localhost:3333/cars";
 
@@ -26,10 +26,15 @@ export default function App() {
     setVehicle(cars);
   }
 
+  async function removeCar(plate) {
+    await delCars(url, { plate });
+    renderCars();
+  }
+
   return (
     <Container>
       <CarForm />
-      <CarTable cars={vehicle} />
+      <CarTable cars={vehicle} removeCar={removeCar} />
     </Container>
   );
 }

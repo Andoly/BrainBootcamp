@@ -30,7 +30,13 @@ const CarForm = () => {
     if (result.error) {
       return result.error;
     } else {
-      setCar({ image: "", brandModel: "", year: "", plate: "", color: "" });
+      setCar({
+        image: "",
+        brandModel: "",
+        year: "",
+        plate: "",
+        color: "#010101",
+      });
     }
   }
 
