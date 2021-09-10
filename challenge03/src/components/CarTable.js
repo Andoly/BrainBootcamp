@@ -2,26 +2,29 @@ import Table from "./Table";
 
 const CarTable = ({ cars, removeCar }) => {
   return cars.length > 0 ? (
-    cars.map((car) => (
-      <>
-        <Table>
-          {
-            <tr key={car.plate}>
-              <td colSpan="2">
-                <img src={car.image} alt={car.brandModel} />
-              </td>
-              <td colSpan="2">{car.brandModel}</td>
-              <td colSpan="2">{car.year}</td>
-              <td colSpan="2">{car.plate}</td>
-              <td colSpan="2">{car.color}</td>
-              <td>
-                <button onClick={() => removeCar(car.plate)}>✕</button>
-              </td>
-            </tr>
-          }
-        </Table>
-      </>
-    ))
+    <>
+      <Table>
+        {cars.map((car) => (
+          <tr key={car.plate}>
+            <td>
+              <img src={car.image} alt={car.brandModel} />
+            </td>
+            <td>{car.brandModel}</td>
+            <td>{car.year}</td>
+            <td>{car.plate}</td>
+            <td>{car.color}</td>
+            <td>
+              <button
+                className="removeCar"
+                onClick={() => removeCar(car.plate)}
+              >
+                ✕
+              </button>
+            </td>
+          </tr>
+        ))}
+      </Table>
+    </>
   ) : (
     <Table>
       {

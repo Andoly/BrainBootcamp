@@ -77,15 +77,20 @@ const CarForm = () => {
           />
 
           <label htmlFor="color">Color</label>
-          <input
-            id="color"
-            name="color"
-            value={car.color}
-            type="color"
-            onChange={onChange}
-          />
+
+          <div className="between">
+            <input
+              id="color"
+              name="color"
+              value={car.color}
+              type="color"
+              onChange={onChange}
+            />
+            <button className="submit" type="submit">
+              Submit
+            </button>
+          </div>
         </div>
-        <button type="submit">Enviar</button>
       </form>
     </>
   );
