@@ -1,4 +1,5 @@
 import Table from "./Table";
+import Image from  './Image'
 
 const CarTable = ({ cars, removeCar }) => {
   return cars.length > 0 ? (
@@ -7,7 +8,7 @@ const CarTable = ({ cars, removeCar }) => {
         {cars.map((car) => (
           <tr key={car.plate}>
             <td>
-              <img src={car.image} alt={car.brandModel} />
+              <Image image={car.image} brandModel={car.brandModel} />
             </td>
             <td>{car.brandModel}</td>
             <td>{car.year}</td>

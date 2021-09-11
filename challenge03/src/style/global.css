@@ -25,6 +25,7 @@ ul {
   --blue: #06092b;
   --red: #ff0000;
   --green: #4bb543;
+  --gray: #1f2426;
 }
 
 .form-group {
@@ -54,16 +55,26 @@ ul {
   max-width: 900px;
   margin: 30px auto;
 }
+table,
+th,
+td {
+  border-radius: 5px;
+}
 
 table {
-  margin: 10px;
+  margin: 40px 0 10px;
+  background-color: var(--light);
 }
 
 td,
 th {
   text-align: center;
-  padding: 10px;
   width: 220px;
+}
+th {
+  background-color: var(--gray);
+  color: var(--light);
+  padding: 10px;
 }
 td > img {
   max-height: 220px;
