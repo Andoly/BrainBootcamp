@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import CarForm from "./components/CarForm";
 import CarTable from "./components/CarTable";
 import Container from "./components/Container";
@@ -19,6 +19,7 @@ export default function App() {
   const [vehicle, setVehicle] = useState(initialRegistration);
   const [car, setCar] = useState(initialRegistration);
   const [notice, setNotice] = useState("");
+  const inputRef = useRef();
 
   useEffect(() => {
     renderCars();
@@ -36,7 +37,6 @@ export default function App() {
     e.preventDefault();
     const result = await postCars(url, car);
     setNotice(result.message);
-    renderCars();
 
     if (result.error) {
       return result.error;
@@ -49,6 +49,9 @@ export default function App() {
         color: "#010101",
       });
     }
+
+    renderCars();
+    inputRef.current.focus();
   }
 
   async function renderCars() {
@@ -72,7 +75,12 @@ export default function App() {
   return (
     <Container>
       <Toast styleClass={notice ? "toastShow" : "toast"} message={notice} />
-      <CarForm carRegistration={publishCar} props={car} onChange={onChange} />
+      <CarForm
+        carRegistration={publishCar}
+        props={car}
+        onChange={onChange}
+        inputRef={inputRef}
+      />
       <CarTable cars={vehicle} removeCar={removeCar} />
     </Container>
   );

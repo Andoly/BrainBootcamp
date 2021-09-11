@@ -1,4 +1,4 @@
-const CarForm = ({ carRegistration, onChange, props }) => {
+const CarForm = ({ carRegistration, onChange, props, inputRef }) => {
   return (
     <>
       <h2>Car registration</h2>
@@ -12,6 +12,7 @@ const CarForm = ({ carRegistration, onChange, props }) => {
             value={props.image}
             type="text"
             onChange={onChange}
+            ref={inputRef}
           />
 
           <label htmlFor="brandModel">Brand/Model</label>
