@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./global.css";
+import "./style/global.css";
+import "./style/toast.css";
 import App from "./App";
 
 ReactDOM.render(

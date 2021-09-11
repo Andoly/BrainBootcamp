@@ -23,9 +23,7 @@ const CarForm = () => {
 
   async function carRegistration(e) {
     e.preventDefault();
-    console.log(car);
     const result = await postCars(url, car);
-    console.log(result);
 
     if (result.error) {
       return result.error;
