@@ -3,7 +3,7 @@ import CarForm from "./components/CarForm";
 import CarTable from "./components/CarTable";
 import Container from "./components/Container";
 import Toast from "./components/Toast";
-import { getCars, delCars } from "./service/apiCars";
+import { postCars, getCars, delCars } from "./service/apiCars";
 
 const url = "http://localhost:3333/cars";
 
@@ -17,11 +17,12 @@ const initialRegistration = {
 
 export default function App() {
   const [vehicle, setVehicle] = useState(initialRegistration);
+  const [car, setCar] = useState(initialRegistration);
   const [notice, setNotice] = useState("");
 
   useEffect(() => {
     renderCars();
-  }, [vehicle]);
+  }, []);
 
   useEffect(() => {
     const subscribe = setTimeout(() => {
@@ -30,6 +31,25 @@ export default function App() {
 
     return () => clearTimeout(subscribe);
   }, [notice]);
+
+  async function publishCar(e) {
+    e.preventDefault();
+    const result = await postCars(url, car);
+    setNotice(result.message);
+    renderCars();
+
+    if (result.error) {
+      return result.error;
+    } else {
+      setCar({
+        image: "",
+        brandModel: "",
+        year: "",
+        plate: "",
+        color: "#010101",
+      });
+    }
+  }
 
   async function renderCars() {
     const cars = await getCars(url);
@@ -43,10 +63,16 @@ export default function App() {
     renderCars();
   }
 
+  function onChange(e) {
+    const { name, value } = e.target;
+
+    setCar({ ...car, [name]: value });
+  }
+
   return (
     <Container>
       <Toast styleClass={notice ? "toastShow" : "toast"} message={notice} />
-      <CarForm />
+      <CarForm carRegistration={publishCar} props={car} onChange={onChange} />
       <CarTable cars={vehicle} removeCar={removeCar} />
     </Container>
   );

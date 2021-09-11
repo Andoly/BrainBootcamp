@@ -1,43 +1,4 @@
-import React from "react";
-import { useState } from "react";
-import { postCars } from "../service/apiCars";
-
-const url = "http://localhost:3333/cars";
-
-const initialRegistration = {
-  image: "",
-  brandModel: "",
-  year: "",
-  plate: "",
-  color: "#010101",
-};
-
-const CarForm = () => {
-  const [car, setCar] = useState(initialRegistration);
-
-  function onChange(e) {
-    const { name, value } = e.target;
-
-    setCar({ ...car, [name]: value });
-  }
-
-  async function carRegistration(e) {
-    e.preventDefault();
-    const result = await postCars(url, car);
-
-    if (result.error) {
-      return result.error;
-    } else {
-      setCar({
-        image: "",
-        brandModel: "",
-        year: "",
-        plate: "",
-        color: "#010101",
-      });
-    }
-  }
-
+const CarForm = ({ carRegistration, onChange, props }) => {
   return (
     <>
       <h2>Car registration</h2>
@@ -48,7 +9,7 @@ const CarForm = () => {
           <input
             id="image"
             name="image"
-            value={car.image}
+            value={props.image}
             type="text"
             onChange={onChange}
           />
@@ -57,7 +18,7 @@ const CarForm = () => {
           <input
             id="brandModel"
             name="brandModel"
-            value={car.brandModel}
+            value={props.brandModel}
             type="text"
             onChange={onChange}
           />
@@ -66,7 +27,7 @@ const CarForm = () => {
           <input
             id="year"
             name="year"
-            value={car.year}
+            value={props.year}
             type="number"
             onChange={onChange}
           />
@@ -75,7 +36,7 @@ const CarForm = () => {
           <input
             id="plate"
             name="plate"
-            value={car.plate}
+            value={props.plate}
             type="text"
             onChange={onChange}
           />
@@ -86,7 +47,7 @@ const CarForm = () => {
             <input
               id="color"
               name="color"
-              value={car.color}
+              value={props.color}
               type="color"
               onChange={onChange}
             />
