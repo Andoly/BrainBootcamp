@@ -13,6 +13,7 @@ const CarForm = ({ carRegistration, onChange, props, inputRef }) => {
             type="text"
             onChange={onChange}
             ref={inputRef}
+            placeholder="image URL"
           />
 
           <label htmlFor="brandModel">Brand/Model</label>
