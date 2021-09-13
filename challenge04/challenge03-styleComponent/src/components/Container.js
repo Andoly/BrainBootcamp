@@ -1,5 +1,12 @@
+import styled from "styled-components";
+
+const ContainerStyled = styled.div`
+  max-width: 900px;
+  margin: 30px auto;
+`;
+
 const Container = ({ children }) => {
-  return <div className="container">{children}</div>;
+  return <ContainerStyled>{children}</ContainerStyled>;
 };
 
 export default Container;

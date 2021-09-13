@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import CarForm from "./components/CarForm/CarForm";
-import CarTable from "./components/CarTable";
+import CarTable from "./components/CarTable/CarTable";
 import Container from "./components/Container";
 import Toast from "./components/Toast";
 import { postCars, getCars, delCars } from "./service/apiCars";

@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+const ImageStyle = styled.img`
+  max-width: 222px;
+  border-radius: 5px;
+`;
 
 const Image = ({ image, brandModel }) => {
   const [url, setUrl] = useState(image);
 
   return (
-    <img
+    <ImageStyle
       src={url}
       alt={brandModel}
       onError={() =>

@@ -35,4 +35,13 @@ export const ButtonSubmit = styled.button`
   height: 40px;
   width: 142px;
   color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    transform: scale(1.01);
+    transition: all 0.5s;
+    border: 1px solid var(--greenHover);
+    background: var(--greenHover);
+  }
 `;
