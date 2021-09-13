@@ -1,12 +1,13 @@
-import { HeadingH3 } from "./Heading";
+import { HeadingH3 } from "../Heading";
+import * as S from "./Menu.style";
 
 const Menu = () => {
   return (
-    <nav>
+    <S.MenuStyled>
       <HeadingH3>Home</HeadingH3>
       <HeadingH3>Service</HeadingH3>
       <HeadingH3>About me</HeadingH3>
-    </nav>
+    </S.MenuStyled>
   );
 };
 

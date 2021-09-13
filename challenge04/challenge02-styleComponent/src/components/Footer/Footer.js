@@ -1,27 +1,28 @@
-import { HeadingH2 } from "./Heading";
+import { HeadingH2 } from "../Heading";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import * as S from "./Footer.style";
 
 const Footer = () => {
   return (
-    <footer>
+    <S.FooterStyled>
       <HeadingH2>Follow us</HeadingH2>
-      <div className="footer">
-        <a
+      <S.ContainerFooter>
+        <S.AFooter
           href="https://www.linkedin.com/in/andoly/"
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
           <FaLinkedin />
-        </a>
-        <a
+        </S.AFooter>
+        <S.AFooter
           href="https://github.com/Andoly"
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
           <FaGithub />
-        </a>
-      </div>
-    </footer>
+        </S.AFooter>
+      </S.ContainerFooter>
+    </S.FooterStyled>
   );
 };
 

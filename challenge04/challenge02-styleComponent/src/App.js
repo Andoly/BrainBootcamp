@@ -1,9 +1,21 @@
-import Header from "./components/Header";
-import Menu from "./components/Menu";
-import Sidebar from "./components/Sidebar";
-import Content from "./components/Content";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Menu from "./components/Menu/Menu";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Content from "./components/Content/Content";
+import Footer from "./components/Footer/Footer";
 import { useState } from "react";
+
+import styled from "styled-components";
+
+const Main = styled.main`
+  display: flex;
+`;
+
+const ContainerStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
 
 const games = [
   {
@@ -49,15 +61,15 @@ export default function App() {
 
   return (
     <>
-      <div className="container">
+      <ContainerStyle>
         <Header />
         <Menu />
-        <main>
+        <Main>
           <Sidebar games={games} changeGame={handleClickGame} />
           <Content title={title} content={content} />
-        </main>
+        </Main>
         <Footer />
-      </div>
+      </ContainerStyle>
     </>
   );
 }
