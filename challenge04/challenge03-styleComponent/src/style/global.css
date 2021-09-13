@@ -27,36 +27,6 @@ ul {
   --green: #4bb543;
   --gray: #1f2426;
 }
-.form {
-  min-width: 600px;
-}
-
-label {
-  font-weight: bold !important;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-}
-
-.form-group label {
-  font-weight: 500;
-  margin: 10px;
-}
-
-.form-group input {
-  background-color: var(--light);
-  height: 36px;
-  padding: 0 10px;
-  border-radius: 8px;
-  border: 1px solid var(--blue);
-}
-.between {
-  display: flex;
-  justify-content: space-between;
-}
 
 .container {
   max-width: 900px;
@@ -107,12 +77,4 @@ button {
   border: 1px solid var(--light);
   color: var(--light);
   background: var(--red);
-}
-
-.submit {
-  background: var(--green);
-  border: 1px solid var(--green);
-  height: 40px;
-  width: 142px;
-  color: #fff;
 }

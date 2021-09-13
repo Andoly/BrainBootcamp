@@ -1,12 +1,14 @@
+import * as S from "./CarForm.style";
+
 const CarForm = ({ carRegistration, onChange, props, inputRef }) => {
   return (
     <>
       <h2>Car registration</h2>
 
       <form onSubmit={carRegistration}>
-        <div className="form-group">
-          <label htmlFor="image">Image</label>
-          <input
+        <S.FormGroup>
+          <S.Label htmlFor="image">Image</S.Label>
+          <S.Input
             id="image"
             name="image"
             value={props.image}
@@ -16,8 +18,8 @@ const CarForm = ({ carRegistration, onChange, props, inputRef }) => {
             placeholder="image URL"
           />
 
-          <label htmlFor="brandModel">Brand/Model</label>
-          <input
+          <S.Label htmlFor="brandModel">Brand/Model</S.Label>
+          <S.Input
             id="brandModel"
             name="brandModel"
             value={props.brandModel}
@@ -25,8 +27,8 @@ const CarForm = ({ carRegistration, onChange, props, inputRef }) => {
             onChange={onChange}
           />
 
-          <label htmlFor="year">Year</label>
-          <input
+          <S.Label htmlFor="year">Year</S.Label>
+          <S.Input
             id="year"
             name="year"
             value={props.year}
@@ -34,8 +36,8 @@ const CarForm = ({ carRegistration, onChange, props, inputRef }) => {
             onChange={onChange}
           />
 
-          <label htmlFor="plate">Plate</label>
-          <input
+          <S.Label htmlFor="plate">Plate</S.Label>
+          <S.Input
             id="plate"
             name="plate"
             value={props.plate}
@@ -43,21 +45,19 @@ const CarForm = ({ carRegistration, onChange, props, inputRef }) => {
             onChange={onChange}
           />
 
-          <label htmlFor="color">Color</label>
+          <S.Label htmlFor="color">Color</S.Label>
 
-          <div className="between">
-            <input
+          <S.Between>
+            <S.Input
               id="color"
               name="color"
               value={props.color}
               type="color"
               onChange={onChange}
             />
-            <button className="submit" type="submit">
-              Submit
-            </button>
-          </div>
-        </div>
+            <S.ButtonSubmit type="submit">Submit</S.ButtonSubmit>
+          </S.Between>
+        </S.FormGroup>
       </form>
     </>
   );
